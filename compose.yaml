@@ -1,0 +1,14 @@
+version: '3.8'
+
+services:
+  web:
+    build: .
+    container_name: nutriscore_prediction_app
+    ports:
+      - "5000:5000"               # Map host port 5000 to container port 5000
+
+    volumes:
+      - ./data:/save_data
+
+    environment:
+      FLASK_ENV: development       # Set Flask to development mode
